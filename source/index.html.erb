@@ -1,6 +1,77 @@
 ---
-title: HTML5 Boilerplate Middleman
+title: scsh — The Scheme Shell
 ---
 
-<!-- Add your site or application content here -->
-<p>Hello world! This is HTML5 Boilerplate.</p>
+<header>
+  <div id="logoarrow">></div>
+  <div id="logotext">scsh</div>
+
+  <p>Write Elegant Shell Scripts In Scheme</p>
+</header>
+
+<section id="setup">
+  <div class="terminal-window">
+    <div class="terminal-title">
+      <div class="close-buttons">
+        <div class="circle-red"></div>
+        <div class="circle-yellow"></div>
+        <div class="circle-green"></div>
+      </div>
+
+      <span>Install</span>
+    </div>
+    <div class="terminal">
+      <ul>
+        <li>curl -L http://ftp.scsh.net/pub/scsh/0.6/scsh-0.6.7.tar.gz | tar zx</li>
+        <li>cd scsh-0.6.7/</li>
+        <li>./configure</li>
+        <li>make</li>
+        <li>make install</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="downloads">
+  <div id="links">
+    <a href="#">scsh-0.6.7.tar.gz</a>
+    <a href="#">Documentation</a>
+    <a href="#">Github</a>
+  </div>
+</section>
+
+<section id="about">
+  <article>
+    <p>Scsh is an open-source Unix shell embedded within Scheme, running on all major Unix platforms including AIX, Cygwin, Linux, FreeBSD, GNU Hurd, HP-UX, Irix, Mac OS X, Solaris, and some others.</p>
+
+    <p>Scsh is a variant of Scheme 48 (an R5RS compliant new-tech Scheme system) Scsh is designed for writing real-life standalone Unix programs and shell scripts. Scsh spans a wide range of application, from “script” applications usually handled with perl or sh, to more standard systems applications usually written in C.</p>
+
+    <p>Scsh has two main components: a process notation for running programs and setting up pipelines and redirections, and a complete syscall library for low-level access to the operating system, i.e. to POSIX, the least common denominator of more or less all Unices, plus widely supported extensions such as symbolic links and BSD sockets. Moreover, scsh provides an awk facility for pattern-directed computation over streams of records, a rich facility for matching regular-expression patterns in strings, event-based interrupt handling, user-level threads, a futuristic module system, and an interactive environment. Scsh comes with extensive documentation describing these and other features.</p>
+  </article>
+</section>
+
+<!--<section id="examples">
+  <article>
+    <div class="bash">
+      <code>#! /bin/sh
+
+      JAIL="/usr/sbin/jail"
+
+      for dir in $(ls /export); do
+      echo $dir
+
+      $JAIL /export/$dir $dir $dir /bin/sh /etc/rc
+      done</code>
+    </div>
+    <div class="scsh">
+      <code>#! /usr/local/bin/scsh -s
+      !#
+      (with-cwd "/jail"
+      (define (jail dir host ip)
+      (run (/usr/sbin/jail ,dir ,host ,ip /bin/sh /etc/rc)))
+      (for-each (lambda (j)
+      (jail j j j))
+      (directory-files)))</code>
+    </div>
+  </article>
+</section>-->
